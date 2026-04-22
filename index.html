@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VNKA CLEAN — Curățenie Profesională</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+
+:root{
+  --navy:#0f1f3d;
+  --navy-mid:#1a3260;
+  --teal:#2a9d8f;
+  --teal-light:#3dbfb0;
+  --teal-dim:rgba(42,157,143,0.1);
+  --teal-border:rgba(42,157,143,0.25);
+  --white:#ffffff;
+  --off-white:#f8f9fc;
+  --light:#eef2f7;
+  --muted:#6b7a99;
+  --text:#1e2d4a;
+  --border:rgba(15,31,61,0.1);
+}
+
+body{font-family:'Montserrat',sans-serif;color:var(--text);background:var(--white);overflow-x:hidden}
+
+/* ── HEADER ── */
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 48px;height:72px;display:flex;align-items:center;justify-content:space-between}
+
+.logo-wrap{display:flex;align-items:center;gap:12px;text-decoration:none}
+.logo-mark{width:44px;height:44px;background:linear-gradient(135deg,var(--navy),var(--navy-mid));display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.logo-mark::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--teal)}
+.logo-mark span{font-size:13px;font-weight:800;color:#fff;letter-spacing:0.5px}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-name{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:2px}
+.logo-tag{font-size:9px;font-weight:600;color:var(--teal);letter-spacing:3px;text-transform:uppercase}
+
+nav{display:flex;align-items:center;gap:32px}
+nav a{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+nav a:hover{color:var(--navy)}
+
+.lang-switcher{display:flex;align-items:center;gap:4px;margin-left:16px;border-left:1px solid var(--border);padding-left:20px}
+.lang-btn{font-size:11px;font-weight:700;letter-spacing:1px;color:var(--muted);background:none;border:none;cursor:pointer;padding:4px 6px;border-radius:4px;transition:all .2s}
+.lang-btn.active{color:var(--teal);background:var(--teal-dim)}
+.lang-btn:hover{color:var(--navy)}
+.lang-sep{font-size:10px;color:var(--border)}
+
+.nav-cta{background:var(--teal);color:#fff !important;padding:10px 22px;font-size:12px !important;font-weight:700 !important;letter-spacing:1px;transition:background .2s,transform .1s !important;border-radius:2px}
+.nav-cta:hover{background:var(--teal-light) !important;transform:translateY(-1px)}
+
+/* ── HERO ── */
+.hero{min-height:80vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 48px 80px;gap:80px;background:linear-gradient(160deg, var(--off-white) 0%, var(--white) 60%);position:relative;overflow:hidden}
+
+.hero::before{content:'';position:absolute;right:-200px;top:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(42,157,143,0.06) 0%,transparent 70%);pointer-events:none}
+.hero::after{content:'';position:absolute;left:0;bottom:0;width:40%;height:3px;background:linear-gradient(to right,var(--teal),transparent)}
+
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:24px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--teal)}
+
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(42px,4.5vw,68px);font-weight:600;line-height:1.1;color:var(--navy);margin-bottom:24px}
+.hero-title em{font-style:italic;color:var(--teal)}
+
+.hero-sub{font-size:16px;line-height:1.8;color:var(--muted);max-width:480px;margin-bottom:44px;font-weight:400}
+
+.hero-btns{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--navy);color:#fff;font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:16px 36px;text-decoration:none;transition:all .2s;border-radius:2px}
+.btn-primary:hover{background:var(--navy-mid);transform:translateY(-2px);box-shadow:0 8px 24px rgba(15,31,61,0.2)}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:13px;font-weight:700;letter-spacing:1px;text-decoration:none;padding:16px 0;border-bottom:2px solid var(--teal);transition:all .2s}
+.btn-secondary:hover{gap:14px}
+
+.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
+.hero-card{background:var(--white);border:1px solid var(--border);padding:40px;box-shadow:0 24px 64px rgba(15,31,61,0.1);position:relative;max-width:420px;width:100%}
+.hero-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--teal),var(--navy))}
+.hc-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:20px}
+.hc-item{display:flex;align-items:center;gap:14px;padding:14px 0;border-bottom:1px solid var(--light)}
+.hc-item:last-child{border-bottom:none}
+.hc-icon{width:36px;height:36px;background:var(--teal-dim);border:1px solid var(--teal-border);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0}
+.hc-text{font-size:13px;font-weight:600;color:var(--navy)}
+.hc-sub{font-size:11px;color:var(--muted);margin-top:2px}
+.hc-check{margin-left:auto;color:var(--teal);font-size:14px;font-weight:700}
+
+/* ── STATS BAR ── */
+.stats-bar{background:var(--navy);padding:40px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat-item{padding:0 40px;border-right:1px solid rgba(255,255,255,0.1);text-align:center}
+.stat-item:first-child{padding-left:0;text-align:left}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--teal);line-height:1}
+.stat-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:6px}
+
+/* ── SECTIONS ── */
+section{padding:100px 48px}
+.section-label{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:16px;display:flex;align-items:center;gap:12px}
+.section-label::before{content:'';width:24px;height:1px;background:var(--teal)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,52px);font-weight:600;color:var(--navy);line-height:1.15;margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--teal)}
+.section-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:560px}
+
+/* ── SERVICES ── */
+.services{background:var(--off-white)}
+.services-header{max-width:640px;margin-bottom:64px}
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+.service-card{background:var(--white);padding:48px 40px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:default}
+.service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--teal);transition:width .4s}
+.service-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(15,31,61,0.1)}
+.service-card:hover::after{width:100%}
+.service-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:400;color:rgba(42,157,143,0.35);line-height:1;margin-bottom:20px;transition:color .3s}
+.service-card:hover .service-num{color:rgba(42,157,143,0.35)}
+.service-icon{font-size:32px;margin-bottom:16px;display:block}
+.service-name{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.service-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);background:var(--teal-dim);border:1px solid var(--teal-border);padding:3px 10px;margin-bottom:14px}
+.service-desc{font-size:14px;color:var(--muted);line-height:1.75}
+.service-features{margin-top:20px;display:flex;flex-direction:column;gap:6px}
+.sf-item{font-size:12px;color:var(--navy);font-weight:600;display:flex;align-items:center;gap:8px}
+.sf-item::before{content:'→';color:var(--teal);font-size:11px}
+
+/* ── PREMIUM SERVICES ── */
+.premium-section{background:var(--navy);position:relative;overflow:hidden}
+.premium-section::before{content:'';position:absolute;right:-100px;top:-100px;width:500px;height:500px;background:radial-gradient(circle,rgba(42,157,143,0.08) 0%,transparent 70%);pointer-events:none}
+.premium-label{color:rgba(42,157,143,1) !important}
+.premium-title{color:var(--white) !important}
+.premium-sub{color:rgba(255,255,255,0.55) !important}
+.premium-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:64px}
+.premium-card{border:1px solid rgba(255,255,255,0.08);padding:40px;background:rgba(255,255,255,0.03);transition:border-color .3s,background .3s}
+.premium-card:hover{border-color:rgba(42,157,143,0.4);background:rgba(42,157,143,0.05)}
+.pc-icon{font-size:40px;margin-bottom:20px;display:block}
+.pc-name{font-size:22px;font-weight:700;color:var(--white);margin-bottom:10px}
+.pc-badge{display:inline-block;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);border:1px solid var(--teal-border);padding:3px 10px;margin-bottom:16px}
+.pc-desc{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.75;margin-bottom:24px}
+.pc-features{display:flex;flex-direction:column;gap:8px}
+.pc-feat{font-size:12px;color:rgba(255,255,255,0.7);font-weight:500;display:flex;align-items:center;gap:10px}
+.pc-feat::before{content:'✓';color:var(--teal);font-weight:700;font-size:11px}
+
+/* ── WHY US ── */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:64px}
+.why-card{text-align:center;padding:40px 32px;border:1px solid var(--border);transition:border-color .3s,transform .3s}
+.why-card:hover{border-color:var(--teal-border);transform:translateY(-6px)}
+.why-icon-wrap{width:72px;height:72px;background:var(--teal-dim);border:1px solid var(--teal-border);display:flex;align-items:center;justify-content:center;margin:0 auto 24px;font-size:28px}
+.why-title{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:12px}
+.why-desc{font-size:14px;color:var(--muted);line-height:1.75}
+
+/* ── CONTACT / FOOTER ── */
+.contact-section{background:var(--off-white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;margin-top:64px}
+.contact-info{display:flex;flex-direction:column;gap:28px}
+.ci-item{display:flex;gap:16px;align-items:flex-start}
+.ci-icon{width:44px;height:44px;background:var(--teal-dim);border:1px solid var(--teal-border);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.ci-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:4px}
+.ci-value{font-size:15px;font-weight:600;color:var(--navy)}
+.ci-sub{font-size:13px;color:var(--muted);margin-top:2px}
+
+.contact-form{display:flex;flex-direction:column;gap:16px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy)}
+.form-input,.form-textarea{padding:14px 16px;border:1px solid var(--border);background:var(--white);font-family:'Montserrat',sans-serif;font-size:14px;color:var(--text);outline:none;transition:border-color .2s;border-radius:2px}
+.form-input:focus,.form-textarea:focus{border-color:var(--teal)}
+.form-textarea{resize:vertical;min-height:120px}
+.form-submit{background:var(--teal);color:#fff;border:none;font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:16px 36px;cursor:pointer;transition:background .2s,transform .1s;border-radius:2px;align-self:flex-start}
+.form-submit:hover{background:var(--teal-light);transform:translateY(-1px)}
+
+footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo{color:rgba(255,255,255,0.3);font-size:11px;font-weight:600;letter-spacing:2px}
+.footer-logo strong{color:var(--white)}
+.footer-copy{font-size:11px;color:rgba(255,255,255,0.3)}
+.social-links{display:flex;gap:12px}
+.social-link{width:36px;height:36px;border:1px solid rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.5);text-decoration:none;font-size:14px;transition:all .2s}
+.social-link:hover{border-color:var(--teal);color:var(--teal)}
+
+/* ── REVEAL ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-delay-1{transition-delay:.1s}
+.reveal-delay-2{transition-delay:.2s}
+.reveal-delay-3{transition-delay:.3s}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+    .testi-grid{grid-template-columns:1fr !important}
+
+  header{padding:0 20px;height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+  nav{display:none}
+  .mobile-lang{display:flex !important}
+  .hero{grid-template-columns:1fr;padding:40px 20px 60px;gap:48px}
+  .hero-visual{display:none}
+  section{padding:60px 20px}
+  .services-grid{grid-template-columns:1fr}
+  .premium-grid{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:48px}
+  .form-row{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:1fr 1fr;gap:24px;padding:40px 20px}
+  .stat-item{padding:0;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:16px}
+  .stat-item:last-child{border-bottom:none;padding-bottom:0}
+  footer{padding:32px 20px;flex-direction:column;text-align:center}
+}
+
+.mobile-lang{display:none;width:100%;justify-content:center;gap:8px;padding:8px 0;border-top:1px solid var(--border);background:rgba(255,255,255,0.97)}
+.mobile-lang .lang-btn{font-size:13px;font-weight:700;letter-spacing:1.5px;padding:8px 16px;border:1px solid var(--border);border-radius:4px}
+.mobile-lang .lang-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
+
+/* ── LANG HIDDEN ── */
+[data-lang]{display:none}
+[data-lang].lang-active{display:block}
+span[data-lang].lang-active{display:inline}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo-wrap">
+    <img src="vnka-logo.jpg" alt="VNKA CLEAN — Servicii de Curățenie" style="height:52px;width:auto;display:block;object-fit:contain">
+  </a>
+
+  <nav>
+    <a href="#servicii" data-lang="ro" class="lang-active">Servicii</a>
+    <a href="#servicii" data-lang="en">Services</a>
+    <a href="#servicii" data-lang="es">Servicios</a>
+    <a href="#de-ce-noi" data-lang="ro" class="lang-active">De ce noi</a>
+    <a href="#de-ce-noi" data-lang="en">Why us</a>
+    <a href="#de-ce-noi" data-lang="es">Por qué</a>
+    <a href="#contact" data-lang="ro" class="lang-active">Contact</a>
+    <a href="#contact" data-lang="en">Contact</a>
+    <a href="#contact" data-lang="es">Contacto</a>
+    <div class="lang-switcher">
+      <button class="lang-btn active" onclick="setLang('ro')">RO</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+      <span class="lang-sep">|</span>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+    <a href="#contact" class="nav-cta">
+      <span data-lang="ro" class="lang-active">Ofertă Gratuită</span>
+      <span data-lang="en">Free Quote</span>
+      <span data-lang="es">Presupuesto</span>
+    </a>
+  </nav>
+  <!-- Mobile lang switcher -->
+  <div class="mobile-lang">
+    <button class="lang-btn active" onclick="setLang('ro')">🇷🇴 RO</button>
+    <button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('es')">🇪🇸 ES</button>
+  </div>
+</header>
+
+<!-- LOGO HERO BAND -->
+<div style="background:var(--off-white);border-bottom:1px solid var(--border);padding:32px 48px;display:flex;justify-content:center;align-items:center;margin-top:72px">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+    <img src="vnka-logo.jpg" alt="VNKA CLEAN" style="height:120px;width:auto;object-fit:contain;display:block">
+    <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);text-align:center">
+      <span data-lang="ro" class="lang-active">Curățenie Profesională · Tenerife Sud</span>
+      <span data-lang="en">Professional Cleaning · Tenerife South</span>
+      <span data-lang="es">Limpieza Profesional · Tenerife Sur</span>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="margin-top:0">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <span data-lang="ro" class="lang-active">Curățenie Profesională · Tenerife Sud</span>
+      <span data-lang="en">Professional Cleaning · Tenerife South</span>
+      <span data-lang="es">Limpieza Profesional · Tenerife Sur</span>
+    </div>
+    <h1 class="hero-title">
+      <span data-lang="ro" class="lang-active">Curățenie Profesională<br><em>fără Compromisuri</em></span>
+      <span data-lang="en">Professional Cleaning<br><em>without Compromise</em></span>
+      <span data-lang="es">Limpieza Profesional<br><em>sin Compromiso</em></span>
+    </h1>
+    <p class="hero-sub">
+      <span data-lang="ro" class="lang-active">Servicii de curățenie de înaltă calitate pentru proprietăți rezidențiale, hoteliere și de birouri. Încredere, eficiență și atenție la fiecare detaliu.</span>
+      <span data-lang="en">High-quality cleaning services for residential, hotel and office properties. Trust, efficiency and attention to every detail.</span>
+      <span data-lang="es">Servicios de limpieza de alta calidad para propiedades residenciales, hoteleras y de oficinas. Confianza, eficiencia y atención a cada detalle.</span>
+    </p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">
+        <span data-lang="ro" class="lang-active">Cere o Ofertă Gratuită →</span>
+        <span data-lang="en">Get a Free Quote →</span>
+        <span data-lang="es">Pedir Presupuesto →</span>
+      </a>
+      <a href="#servicii" class="btn-secondary">
+        <span data-lang="ro" class="lang-active">Vezi serviciile</span>
+        <span data-lang="en">View services</span>
+        <span data-lang="es">Ver servicios</span>
+        ↓
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hc-label">VNKA CLEAN — Servicii Incluse</div>
+      <div class="hc-item">
+        <div class="hc-icon">🏨</div>
+        <div>
+          <div class="hc-text">Vivienda Vacacional</div>
+          <div class="hc-sub">Check-in / Check-out rapid</div>
+        </div>
+        <div class="hc-check">✓</div>
+      </div>
+      <div class="hc-item">
+        <div class="hc-icon">🏡</div>
+        <div>
+          <div class="hc-text">Case & Vile Private</div>
+          <div class="hc-sub">Întreținere premium</div>
+        </div>
+        <div class="hc-check">✓</div>
+      </div>
+      <div class="hc-item">
+        <div class="hc-icon">🏢</div>
+        <div>
+          <div class="hc-text">Birouri & Spații Comerciale</div>
+          <div class="hc-sub">Programe flexibile</div>
+        </div>
+        <div class="hc-check">✓</div>
+      </div>
+      <div class="hc-item">
+        <div class="hc-icon">👕</div>
+        <div>
+          <div class="hc-text">Laundry & Călcat Profesional</div>
+          <div class="hc-sub">Serviciu premium</div>
+        </div>
+        <div class="hc-check">✓</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item reveal">
+    <div class="stat-num">59</div>
+    <div class="stat-label">
+      <span data-lang="ro" class="lang-active">Proprietăți Servite</span>
+      <span data-lang="en">Properties Served</span>
+      <span data-lang="es">Propiedades Atendidas</span>
+    </div>
+  </div>
+  <div class="stat-item reveal reveal-delay-1">
+    <div class="stat-num">98%</div>
+    <div class="stat-label">
+      <span data-lang="ro" class="lang-active">Clienți Mulțumiți</span>
+      <span data-lang="en">Satisfied Clients</span>
+      <span data-lang="es">Clientes Satisfechos</span>
+    </div>
+  </div>
+  <div class="stat-item reveal reveal-delay-2">
+    <div class="stat-num">24h</div>
+    <div class="stat-label">
+      <span data-lang="ro" class="lang-active">Disponibilitate</span>
+      <span data-lang="en">Availability</span>
+      <span data-lang="es">Disponibilidad</span>
+    </div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="servicii" class="services">
+  <div class="services-header reveal">
+    <div class="section-label">
+      <span data-lang="ro" class="lang-active">Serviciile Noastre</span>
+      <span data-lang="en">Our Services</span>
+      <span data-lang="es">Nuestros Servicios</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="ro" class="lang-active">Soluții complete pentru<br><em>fiecare proprietate</em></span>
+      <span data-lang="en">Complete solutions for<br><em>every property</em></span>
+      <span data-lang="es">Soluciones completas para<br><em>cada propiedad</em></span>
+    </h2>
+  </div>
+
+  <div class="services-grid">
+    <!-- Vivienda Vacacional -->
+    <div class="service-card reveal">
+      <div class="service-num">01</div>
+      <span class="service-icon">🏨</span>
+      <div class="service-name">Vivienda Vacacional (Vv)</div>
+      <div class="service-badge">HOTELIER · CHECK-IN/OUT</div>
+      <p class="service-desc">
+        <span data-lang="ro" class="lang-active">Curățenie specializată pentru proprietăți în regim hotelier. Pregătire rapidă și impecabilă pentru fiecare oaspete, cu protocoale stricte de igienă și prezentare. <strong>Abonament lunar la cerere.</strong></span>
+        <span data-lang="en">Specialized cleaning for hotel-regime properties. Fast and impeccable preparation for every guest, with strict hygiene and presentation protocols. <strong>Monthly subscription available on request.</strong></span>
+        <span data-lang="es">Limpieza especializada para propiedades en régimen hotelero. Preparación rápida e impecable para cada huésped, con estrictos protocolos de higiene y presentación. <strong>Suscripción mensual disponible bajo petición.</strong></span>
+      </p>
+      <div class="service-features">
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Schimbare completă lenjerie</span><span data-lang="en">Complete linen change</span><span data-lang="es">Cambio completo de ropa de cama</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Dezinfecție toate suprafețele</span><span data-lang="en">Disinfection of all surfaces</span><span data-lang="es">Desinfección de todas las superficies</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Raport de stare proprietate</span><span data-lang="en">Property condition report</span><span data-lang="es">Informe de estado de la propiedad</span></div>
+      </div>
+      <div style="margin-top:16px;padding:14px 16px;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:6px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>12 €/oră</strong> curățenie de întreținere</span>
+          <span data-lang="en">From <strong>€12/hour</strong> maintenance cleaning</span>
+          <span data-lang="es">Desde <strong>12 €/hora</strong> limpieza de mantenimiento</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>14 €/oră</strong> curățenie generală</span>
+          <span data-lang="en">From <strong>€14/hour</strong> general cleaning</span>
+          <span data-lang="es">Desde <strong>14 €/hora</strong> limpieza general</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Case si Vile -->
+    <div class="service-card reveal reveal-delay-1">
+      <div class="service-num">02</div>
+      <span class="service-icon">🏡</span>
+      <div class="service-name">
+        <span data-lang="ro" class="lang-active">Case și Vile Private</span>
+        <span data-lang="en">Private Houses & Villas</span>
+        <span data-lang="es">Casas y Villas Privadas</span>
+      </div>
+      <div class="service-badge">PREMIUM · REZIDENȚIAL</div>
+      <p class="service-desc">
+        <span data-lang="ro" class="lang-active">Întreținere meticuloasă pentru reședințe de lux. Fiecare detaliu contează — de la pardoseli la mobilier fin, tratăm proprietatea dumneavoastră cu respectul cuvenit. <strong>Abonament lunar la cerere.</strong></span>
+        <span data-lang="en">Meticulous maintenance for luxury residences. Every detail matters — from floors to fine furniture, we treat your property with the utmost respect. <strong>Monthly subscription available on request.</strong></span>
+        <span data-lang="es">Mantenimiento meticuloso para residencias de lujo. Cada detalle importa — desde suelos hasta muebles finos, tratamos su propiedad con el respeto que merece. <strong>Suscripción mensual disponible bajo petición.</strong></span>
+      </p>
+      <div class="service-features">
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Curățenie profundă periodică</span><span data-lang="en">Periodic deep cleaning</span><span data-lang="es">Limpieza profunda periódica</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Produse premium eco-friendly</span><span data-lang="en">Premium eco-friendly products</span><span data-lang="es">Productos premium ecológicos</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Program personalizat</span><span data-lang="en">Customized schedule</span><span data-lang="es">Programa personalizado</span></div>
+      </div>
+      <div style="margin-top:16px;padding:14px 16px;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:6px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>12 €/oră</strong> curățenie de întreținere</span>
+          <span data-lang="en">From <strong>€12/hour</strong> maintenance cleaning</span>
+          <span data-lang="es">Desde <strong>12 €/hora</strong> limpieza de mantenimiento</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>14 €/oră</strong> curățenie generală</span>
+          <span data-lang="en">From <strong>€14/hour</strong> general cleaning</span>
+          <span data-lang="es">Desde <strong>14 €/hora</strong> limpieza general</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Apartamente -->
+    <div class="service-card reveal reveal-delay-2">
+      <div class="service-num">03</div>
+      <span class="service-icon">🏙️</span>
+      <div class="service-name">
+        <span data-lang="ro" class="lang-active">Apartamente</span>
+        <span data-lang="en">Apartments</span>
+        <span data-lang="es">Apartamentos</span>
+      </div>
+      <div class="service-badge">URBAN · EFICIENT</div>
+      <p class="service-desc">
+        <span data-lang="ro" class="lang-active">Soluții eficiente și adaptate pentru locuințe urbane. Rapiditate fără a compromite calitatea — rezultate perfecte în timp optim. <strong>Abonament lunar la cerere.</strong></span>
+        <span data-lang="en">Efficient solutions tailored for urban dwellings. Speed without compromising quality — perfect results in optimal time. <strong>Monthly subscription available on request.</strong></span>
+        <span data-lang="es">Soluciones eficientes y adaptadas para viviendas urbanas. Rapidez sin comprometer la calidad — resultados perfectos en tiempo óptimo. <strong>Suscripción mensual disponible bajo petición.</strong></span>
+      </p>
+      <div class="service-features">
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Curățenie standard sau profundă</span><span data-lang="en">Standard or deep cleaning</span><span data-lang="es">Limpieza estándar o profunda</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Flexibilitate program</span><span data-lang="en">Schedule flexibility</span><span data-lang="es">Flexibilidad de horario</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Prețuri competitive</span><span data-lang="en">Competitive prices</span><span data-lang="es">Precios competitivos</span></div>
+      </div>
+      <div style="margin-top:16px;padding:14px 16px;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:6px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>12 €/oră</strong> curățenie de întreținere</span>
+          <span data-lang="en">From <strong>€12/hour</strong> maintenance cleaning</span>
+          <span data-lang="es">Desde <strong>12 €/hora</strong> limpieza de mantenimiento</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>14 €/oră</strong> curățenie generală</span>
+          <span data-lang="en">From <strong>€14/hour</strong> general cleaning</span>
+          <span data-lang="es">Desde <strong>14 €/hora</strong> limpieza general</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Birouri -->
+    <div class="service-card reveal reveal-delay-3">
+      <div class="service-num">04</div>
+      <span class="service-icon">🏢</span>
+      <div class="service-name">
+        <span data-lang="ro" class="lang-active">Birouri & Spații Comerciale</span>
+        <span data-lang="en">Offices & Commercial Spaces</span>
+        <span data-lang="es">Oficinas y Espacios Comerciales</span>
+      </div>
+      <div class="service-badge">B2B · PROFESIONAL</div>
+      <p class="service-desc">
+        <span data-lang="ro" class="lang-active">Curățenie profesională pentru medii de lucru productive. Un spațiu curat reflectă profesionalismul companiei dumneavoastră și crește productivitatea echipei. <strong>Abonament lunar la cerere.</strong></span>
+        <span data-lang="en">Professional cleaning for productive work environments. A clean space reflects your company's professionalism and boosts team productivity. <strong>Monthly subscription available on request.</strong></span>
+        <span data-lang="es">Limpieza profesional para entornos de trabajo productivos. Un espacio limpio refleja el profesionalismo de su empresa y aumenta la productividad del equipo. <strong>Suscripción mensual disponible bajo petición.</strong></span>
+      </p>
+      <div class="service-features">
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Curățenie zilnică / săptămânală</span><span data-lang="en">Daily / weekly cleaning</span><span data-lang="es">Limpieza diaria / semanal</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Discreție garantată</span><span data-lang="en">Guaranteed discretion</span><span data-lang="es">Discreción garantizada</span></div>
+        <div class="sf-item"><span data-lang="ro" class="lang-active">Contract personalizat</span><span data-lang="en">Custom contract</span><span data-lang="es">Contrato personalizado</span></div>
+      </div>
+      <div style="margin-top:16px;padding:14px 16px;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:6px;display:flex;flex-direction:column;gap:6px">
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>12 €/oră</strong> curățenie de întreținere</span>
+          <span data-lang="en">From <strong>€12/hour</strong> maintenance cleaning</span>
+          <span data-lang="es">Desde <strong>12 €/hora</strong> limpieza de mantenimiento</span>
+        </div>
+        <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
+          <span style="font-size:14px">★</span>
+          <span data-lang="ro" class="lang-active">De la <strong>14 €/oră</strong> curățenie generală</span>
+          <span data-lang="en">From <strong>€14/hour</strong> general cleaning</span>
+          <span data-lang="es">Desde <strong>14 €/hora</strong> limpieza general</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- PREMIUM SERVICES -->
+<section class="premium-section">
+  <div class="reveal">
+    <div class="section-label premium-label">
+      <span data-lang="ro" class="lang-active">Servicii Suplimentare</span>
+      <span data-lang="en">Additional Services</span>
+      <span data-lang="es">Servicios Adicionales</span>
+    </div>
+    <h2 class="section-title premium-title">
+      <span data-lang="ro" class="lang-active">Servicii Suplimentare<br><em>Premium</em></span>
+      <span data-lang="en">Premium Additional<br><em>Services</em></span>
+      <span data-lang="es">Servicios Adicionales<br><em>Premium</em></span>
+    </h2>
+    <p class="section-sub premium-sub">
+      <span data-lang="ro" class="lang-active">Completați experiența de curățenie cu servicii premium specializate — pentru o proprietate impecabilă în cel mai mic detaliu.</span>
+      <span data-lang="en">Complete the cleaning experience with specialized premium services — for an impeccable property in every detail.</span>
+      <span data-lang="es">Complete la experiencia de limpieza con servicios premium especializados — para una propiedad impecable en cada detalle.</span>
+    </p>
+  </div>
+
+  <div class="premium-grid">
+    <div class="premium-card reveal">
+      <span class="pc-icon">🛏️</span>
+      <div class="pc-name">
+        <span data-lang="ro" class="lang-active">Laundry Profesional</span>
+        <span data-lang="en">Professional Laundry</span>
+        <span data-lang="es">Lavandería Profesional</span>
+      </div>
+      <div class="pc-badge">PREMIUM SERVICE</div>
+      <p class="pc-desc">
+        <span data-lang="ro" class="lang-active">Spălare și îngrijire profesională a lenjeriei de pat, prosoapelor și textilelor. Produse premium, tratamente specifice pentru fiecare tip de material, rezultate impecabile.</span>
+        <span data-lang="en">Professional washing and care of bed linen, towels and textiles. Premium products, specific treatments for each type of material, impeccable results.</span>
+        <span data-lang="es">Lavado y cuidado profesional de ropa de cama, toallas y textiles. Productos premium, tratamientos específicos para cada tipo de material, resultados impecables.</span>
+      </p>
+      <div class="pc-features">
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Lenjerie de pat toate dimensiunile</span><span data-lang="en">Bed linen all sizes</span><span data-lang="es">Ropa de cama todos los tamaños</span></div>
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Prosoape & halate de baie</span><span data-lang="en">Towels & bathrobes</span><span data-lang="es">Toallas y albornoces</span></div>
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Tratament pete & dezinfecție</span><span data-lang="en">Stain treatment & disinfection</span><span data-lang="es">Tratamiento de manchas y desinfección</span></div>
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Pliere și ambalare hotelieră</span><span data-lang="en">Hotel-style folding & packaging</span><span data-lang="es">Plegado y embalaje estilo hotel</span></div>
+      </div>
+    </div>
+
+    <div class="premium-card reveal reveal-delay-1">
+      <span class="pc-icon">👔</span>
+      <div class="pc-name">
+        <span data-lang="ro" class="lang-active">Călcat Profesional</span>
+        <span data-lang="en">Professional Ironing</span>
+        <span data-lang="es">Planchado Profesional</span>
+      </div>
+      <div class="pc-badge">PREMIUM SERVICE</div>
+      <p class="pc-desc">
+        <span data-lang="ro" class="lang-active">Serviciu de călcat profesional pentru haine, lenjerie și textile delicate. Echipamente de ultimă generație, finisaj impecabil, respectând specificațiile fiecărui material.</span>
+        <span data-lang="en">Professional ironing service for clothes, linen and delicate textiles. State-of-the-art equipment, impeccable finish, respecting the specifications of each material.</span>
+        <span data-lang="es">Servicio de planchado profesional para ropa, ropa de cama y textiles delicados. Equipos de última generación, acabado impecable, respetando las especificaciones de cada material.</span>
+      </p>
+      <div class="pc-features">
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Cămăși & haine formale</span><span data-lang="en">Shirts & formal wear</span><span data-lang="es">Camisas y ropa formal</span></div>
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Lenjerie de pat călcată</span><span data-lang="en">Pressed bed linen</span><span data-lang="es">Ropa de cama planchada</span></div>
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Textile delicate & mătase</span><span data-lang="en">Delicate textiles & silk</span><span data-lang="es">Textiles delicados y seda</span></div>
+        <div class="pc-feat"><span data-lang="ro" class="lang-active">Livrare la domiciliu</span><span data-lang="en">Home delivery</span><span data-lang="es">Entrega a domicilio</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="de-ce-noi">
+  <div class="reveal" style="text-align:center;margin-bottom:0">
+    <div class="section-label" style="justify-content:center">
+      <span data-lang="ro" class="lang-active">De ce VNKA CLEAN</span>
+      <span data-lang="en">Why VNKA CLEAN</span>
+      <span data-lang="es">Por qué VNKA CLEAN</span>
+    </div>
+    <h2 class="section-title" style="text-align:center">
+      <span data-lang="ro" class="lang-active">Trei motive pentru care<br>clienții revin la noi</span>
+      <span data-lang="en">Three reasons why<br><em>clients return to us</em></span>
+      <span data-lang="es">Tres razones por las que<br><em>los clientes vuelven</em></span>
+    </h2>
+  </div>
+
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <div class="why-icon-wrap">🏅</div>
+      <div class="why-title">
+        <span data-lang="ro" class="lang-active">Profesionalism</span>
+        <span data-lang="en">Professionalism</span>
+        <span data-lang="es">Profesionalismo</span>
+      </div>
+      <p class="why-desc">
+        <span data-lang="ro" class="lang-active">Echipă formată și certificată, protocoale clare, echipamente profesionale. Fiecare intervenție este documentată și urmărită pentru a garanta standarde constante.</span>
+        <span data-lang="en">Trained and certified team, clear protocols, professional equipment. Each intervention is documented and tracked to guarantee consistent standards.</span>
+        <span data-lang="es">Equipo formado y certificado, protocolos claros, equipos profesionales. Cada intervención está documentada y supervisada para garantizar estándares consistentes.</span>
+      </p>
+    </div>
+
+    <div class="why-card reveal reveal-delay-1">
+      <div class="why-icon-wrap">🔍</div>
+      <div class="why-title">
+        <span data-lang="ro" class="lang-active">Atenție la Detalii</span>
+        <span data-lang="en">Attention to Detail</span>
+        <span data-lang="es">Atención al Detalle</span>
+      </div>
+      <p class="why-desc">
+        <span data-lang="ro" class="lang-active">Nu există "suficient de curat" în vocabularul nostru. Fiecare colț, fiecare suprafață, fiecare detaliu este tratat cu aceeași grijă — pentru că excelența nu are excepții.</span>
+        <span data-lang="en">There is no "clean enough" in our vocabulary. Every corner, every surface, every detail is treated with the same care — because excellence has no exceptions.</span>
+        <span data-lang="es">No existe "suficientemente limpio" en nuestro vocabulario. Cada rincón, cada superficie, cada detalle se trata con el mismo cuidado — porque la excelencia no tiene excepciones.</span>
+      </p>
+    </div>
+
+    <div class="why-card reveal reveal-delay-2">
+      <div class="why-icon-wrap">🗓️</div>
+      <div class="why-title">
+        <span data-lang="ro" class="lang-active">Flexibilitate</span>
+        <span data-lang="en">Flexibility</span>
+        <span data-lang="es">Flexibilidad</span>
+      </div>
+      <p class="why-desc">
+        <span data-lang="ro" class="lang-active">Program adaptat nevoilor dumneavoastră — dimineață, seară, weekend. Urgențe acceptate. Servicii punctuale, cu respectul timpului și al proprietății dumneavoastră.</span>
+        <span data-lang="en">Schedule adapted to your needs — morning, evening, weekend. Emergencies accepted. Punctual service, with respect for your time and property.</span>
+        <span data-lang="es">Horario adaptado a sus necesidades — mañana, tarde, fin de semana. Urgencias aceptadas. Servicio puntual, con respeto por su tiempo y su propiedad.</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background:var(--navy);padding:80px 48px">
+  <div class="reveal" style="text-align:center;margin-bottom:56px">
+    <div class="section-label" style="justify-content:center;color:var(--teal)">
+      <span data-lang="ro" class="lang-active">Ce spun clienții noștri</span>
+      <span data-lang="en">What our clients say</span>
+      <span data-lang="es">Lo que dicen nuestros clientes</span>
+    </div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:600;color:#fff;line-height:1.15">
+      <span data-lang="ro" class="lang-active">Rezultate reale, <em style="font-style:italic;color:var(--teal)">clienți reali</em></span>
+      <span data-lang="en">Real results, <em style="font-style:italic;color:var(--teal)">real clients</em></span>
+      <span data-lang="es">Resultados reales, <em style="font-style:italic;color:var(--teal)">clientes reales</em></span>
+    </h2>
+  </div>
+
+  <div class="testi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto">
+
+    <div class="reveal" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
+      <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
+        <span data-lang="ro" class="lang-active">Serviciu impecabil pentru proprietatea mea de închiriat. Pregătirea între check-in și check-out este rapidă, profesionistă și fără surprize. Oaspeții mei lasă constant recenzii de 5 stele — în mare parte datorită curățeniei perfecte la sosire.</span>
+        <span data-lang="en">Impeccable service for my rental property. Turnover between check-in and check-out is fast, professional and stress-free. My guests consistently leave 5-star reviews — largely thanks to the perfect cleanliness on arrival.</span>
+        <span data-lang="es">Servicio impecable para mi propiedad de alquiler. La preparación entre check-in y check-out es rápida, profesional y sin sorpresas. Mis huéspedes dejan constantemente reseñas de 5 estrellas.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+        <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">J</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff">James T.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">
+            <span data-lang="ro" class="lang-active">Owner · Vivienda Vacacional · Tenerife Sud</span>
+            <span data-lang="en">Owner · Vacation Rental · Tenerife South</span>
+            <span data-lang="es">Propietario · Vivienda Vacacional · Tenerife Sur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
+      <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
+        <span data-lang="ro" class="lang-active">VNKA CLEAN întrece așteptările la fiecare vizită. Echipa lor tratează spațiul nostru de birouri cu un profesionalism real — discreți, punctuali și atenți la detalii. De când lucrăm cu ei, nu a trebuit să ne gândim niciodată la curățenie.</span>
+        <span data-lang="en">VNKA CLEAN exceeds expectations on every visit. Their team treats our office space with real professionalism — discreet, punctual and detail-oriented. Since working with them, we have never had to think about cleaning.</span>
+        <span data-lang="es">VNKA CLEAN supera las expectativas en cada visita. Su equipo trata nuestro espacio de oficinas con un profesionalismo real — discretos, puntuales y atentos a los detalles. Desde que trabajamos con ellos, nunca hemos tenido que pensar en la limpieza.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+        <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">M</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff">María S.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">
+            <span data-lang="ro" class="lang-active">Manager · Birouri · Fañabe, Tenerife</span>
+            <span data-lang="en">Manager · Offices · Fañabe, Tenerife</span>
+            <span data-lang="es">Responsable · Oficinas · Fañabe, Tenerife</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
+      <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
+        <span data-lang="ro" class="lang-active">Am angajat VNKA CLEAN pentru villa noastră din Torviscas și rezultatele au depășit orice așteptare. Atenția la detalii este excepțională — de la tratamentul mobilierului fin până la prezentarea fiecărei camere. O echipă în care poți avea încredere deplină.</span>
+        <span data-lang="en">I hired VNKA CLEAN for our villa in Torviscas and the results exceeded every expectation. The attention to detail is exceptional — from the treatment of fine furniture to the presentation of each room. A team you can fully trust.</span>
+        <span data-lang="es">Contraté a VNKA CLEAN para nuestra villa en Torviscas y los resultados superaron todas las expectativas. La atención al detalle es excepcional. Un equipo en el que puedes confiar plenamente.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+        <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">A</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff">Andrei M.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">
+            <span data-lang="ro" class="lang-active">Proprietar · Vilă · Torviscas, Tenerife</span>
+            <span data-lang="en">Owner · Villa · Torviscas, Tenerife</span>
+            <span data-lang="es">Propietario · Villa · Torviscas, Tenerife</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="reveal">
+    <div class="section-label">
+      <span data-lang="ro" class="lang-active">Contactați-ne</span>
+      <span data-lang="en">Contact Us</span>
+      <span data-lang="es">Contáctenos</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="ro" class="lang-active">Cere oferta ta<br><em>gratuită astăzi</em></span>
+      <span data-lang="en">Request your<br><em>free quote today</em></span>
+      <span data-lang="es">Solicita tu<br><em>presupuesto gratuito hoy</em></span>
+    </h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <div class="ci-item">
+        <div class="ci-icon">📞</div>
+        <div>
+          <div class="ci-label">
+            <span data-lang="ro" class="lang-active">Telefon</span>
+            <span data-lang="en">Phone</span>
+            <span data-lang="es">Teléfono</span>
+          </div>
+          <a href="https://wa.me/34614684155" target="_blank" style="font-size:15px;font-weight:600;color:var(--navy);text-decoration:none;display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>+34 614 68 41 55</a>
+          <div class="ci-sub">
+            <span data-lang="ro" class="lang-active">Disponibil 7 zile / săptămână</span>
+            <span data-lang="en">Available 7 days / week</span>
+            <span data-lang="es">Disponible 7 días / semana</span>
+          </div>
+        </div>
+      </div>
+      <!-- hidden contact -->
+      <a href="mailto:susan.anca@yahoo.com" style="display:none">contact</a>
+      <div class="ci-item">
+        <div class="ci-icon">📍</div>
+        <div>
+          <div class="ci-label">
+            <span data-lang="ro" class="lang-active">Zonă Deservită</span>
+            <span data-lang="en">Service Area</span>
+            <span data-lang="es">Área de Servicio</span>
+          </div>
+          <div class="ci-value">Tenerife, España</div>
+          <div class="ci-sub">Tenerife Sud</div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form reveal reveal-delay-1" onsubmit="return false">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="ro" class="lang-active">Nume</span>
+            <span data-lang="en">Name</span>
+            <span data-lang="es">Nombre</span>
+          </label>
+          <input type="text" class="form-input" placeholder="Maria Ionescu">
+        </div>
+        <div class="form-group">
+          <label class="form-label">
+            <span data-lang="ro" class="lang-active">Telefon</span>
+            <span data-lang="en">Phone</span>
+            <span data-lang="es">Teléfono</span>
+          </label>
+          <input type="tel" class="form-input" placeholder="+34 614 68 41 55">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">
+          <span data-lang="ro" class="lang-active">Tip Proprietate</span>
+          <span data-lang="en">Property Type</span>
+          <span data-lang="es">Tipo de Propiedad</span>
+        </label>
+        <input type="text" class="form-input" placeholder="Apartament / Vilă / Birou / Vv">
+      </div>
+      <div class="form-group">
+        <label class="form-label">
+          <span data-lang="ro" class="lang-active">Mesaj</span>
+          <span data-lang="en">Message</span>
+          <span data-lang="es">Mensaje</span>
+        </label>
+        <textarea class="form-textarea" id="msgTextarea" placeholder="Descrieți nevoile dumneavoastră: tipul proprietății, suprafața aproximativă, frecvența dorită, orice cerințe speciale..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">
+        <span data-lang="ro" class="lang-active">Trimite Cererea →</span>
+        <span data-lang="en">Send Request →</span>
+        <span data-lang="es">Enviar Solicitud →</span>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <img src="vnka-logo.jpg" alt="VNKA CLEAN" style="height:40px;width:auto;filter:brightness(0) invert(1);opacity:0.7">
+  </div>
+  <div class="footer-copy">© 2026 VNKA CLEAN · Tenerife, España</div>
+</footer>
+
+<script>
+// Language switcher
+function setLang(lang) {
+  document.querySelectorAll('[data-lang]').forEach(el => {
+    el.classList.toggle('lang-active', el.dataset.lang === lang);
+  });
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    const btnLang = btn.textContent.replace(/[^a-z]/gi,'').toLowerCase().slice(-2);
+    btn.classList.toggle('active', btnLang === lang);
+  });
+  document.documentElement.lang = lang;
+  // Update textarea placeholder
+  const ta = document.getElementById('msgTextarea');
+  if(ta) {
+    const placeholders = {
+      ro: 'Descrieți nevoile dumneavoastră: tipul proprietății, suprafața aproximativă, frecvența dorită, orice cerințe speciale...',
+      en: 'Describe your needs: property type, approximate area, desired frequency, any special requirements...',
+      es: 'Describa sus necesidades: tipo de propiedad, superficie aproximada, frecuencia deseada, requisitos especiales...'
+    };
+    ta.placeholder = placeholders[lang] || placeholders.ro;
+  }
+  // Update URL for shareable link
+  const url = new URL(window.location.href);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url.toString());
+}
+
+// On load: read lang from URL
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang');
+  if(lang && ['ro','en','es'].includes(lang)) setLang(lang);
+})();
+
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// Header scroll effect
+window.addEventListener('scroll', () => {
+  const header = document.querySelector('header');
+  header.style.boxShadow = window.scrollY > 20 
+    ? '0 2px 20px rgba(15,31,61,0.1)' 
+    : 'none';
+});
+</script>
+</body>
+</html>
