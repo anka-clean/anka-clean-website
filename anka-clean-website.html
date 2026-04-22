@@ -52,7 +52,7 @@ nav a:hover{color:var(--navy)}
 .nav-cta:hover{background:var(--teal-light) !important;transform:translateY(-1px)}
 
 /* ── HERO ── */
-.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:100px 48px 80px;gap:80px;background:linear-gradient(160deg, var(--off-white) 0%, var(--white) 60%);position:relative;overflow:hidden}
+.hero{min-height:80vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:60px 48px 80px;gap:80px;background:linear-gradient(160deg, var(--off-white) 0%, var(--white) 60%);position:relative;overflow:hidden}
 
 .hero::before{content:'';position:absolute;right:-200px;top:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(42,157,143,0.06) 0%,transparent 70%);pointer-events:none}
 .hero::after{content:'';position:absolute;left:0;bottom:0;width:40%;height:3px;background:linear-gradient(to right,var(--teal),transparent)}
@@ -178,9 +178,12 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
 
 /* ── MOBILE ── */
 @media(max-width:900px){
-  header{padding:0 20px;height:64px}
+    .testi-grid{grid-template-columns:1fr !important}
+
+  header{padding:0 20px;height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
   nav{display:none}
-  .hero{grid-template-columns:1fr;padding:90px 20px 60px;gap:48px}
+  .mobile-lang{display:flex !important}
+  .hero{grid-template-columns:1fr;padding:40px 20px 60px;gap:48px}
   .hero-visual{display:none}
   section{padding:60px 20px}
   .services-grid{grid-template-columns:1fr}
@@ -193,6 +196,10 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
   .stat-item:last-child{border-bottom:none;padding-bottom:0}
   footer{padding:32px 20px;flex-direction:column;text-align:center}
 }
+
+.mobile-lang{display:none;width:100%;justify-content:center;gap:8px;padding:8px 0;border-top:1px solid var(--border);background:rgba(255,255,255,0.97)}
+.mobile-lang .lang-btn{font-size:13px;font-weight:700;letter-spacing:1.5px;padding:8px 16px;border:1px solid var(--border);border-radius:4px}
+.mobile-lang .lang-btn.active{background:var(--teal);color:#fff;border-color:var(--teal)}
 
 /* ── LANG HIDDEN ── */
 [data-lang]{display:none}
@@ -230,10 +237,21 @@ span[data-lang].lang-active{display:inline}
       <span data-lang="es">Presupuesto</span>
     </a>
   </nav>
+  <!-- Mobile lang switcher -->
+  <div class="mobile-lang">
+    <button class="lang-btn active" onclick="setLang('ro')">🇷🇴 RO</button>
+    <button class="lang-btn" onclick="setLang('en')">🇬🇧 EN</button>
+    <button class="lang-btn" onclick="setLang('es')">🇪🇸 ES</button>
+  </div>
 </header>
 
+<!-- LOGO HERO BAND -->
+<div style="background:var(--off-white);border-bottom:1px solid var(--border);padding:32px 48px;display:flex;justify-content:center;align-items:center;margin-top:72px">
+  <img src="vnka-logo.jpg" alt="VNKA CLEAN" style="height:120px;width:auto;object-fit:contain;display:block">
+</div>
+
 <!-- HERO -->
-<section class="hero">
+<section class="hero" style="margin-top:0">
   <div class="hero-content">
     <div class="hero-eyebrow">
       <span data-lang="ro" class="lang-active">Curățenie Profesională · Canare, Spania</span>
@@ -559,6 +577,86 @@ span[data-lang].lang-active{display:inline}
   </div>
 </section>
 
+<!-- TESTIMONIALS -->
+<section style="background:var(--navy);padding:80px 48px">
+  <div class="reveal" style="text-align:center;margin-bottom:56px">
+    <div class="section-label" style="justify-content:center;color:var(--teal)">
+      <span data-lang="ro" class="lang-active">Ce spun clienții noștri</span>
+      <span data-lang="en">What our clients say</span>
+      <span data-lang="es">Lo que dicen nuestros clientes</span>
+    </div>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(28px,3vw,44px);font-weight:600;color:#fff;line-height:1.15">
+      <span data-lang="ro" class="lang-active">Rezultate reale, <em style="font-style:italic;color:var(--teal)">clienți reali</em></span>
+      <span data-lang="en">Real results, <em style="font-style:italic;color:var(--teal)">real clients</em></span>
+      <span data-lang="es">Resultados reales, <em style="font-style:italic;color:var(--teal)">clientes reales</em></span>
+    </h2>
+  </div>
+
+  <div class="testi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto">
+
+    <div class="reveal" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
+      <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
+        <span data-lang="ro" class="lang-active">Serviciu impecabil pentru proprietatea mea de închiriat. Pregătirea între check-in și check-out este rapidă, profesionistă și fără surprize. Oaspeții mei lasă constant recenzii de 5 stele — în mare parte datorită curățeniei perfecte la sosire.</span>
+        <span data-lang="en">Impeccable service for my rental property. Turnover between check-in and check-out is fast, professional and stress-free. My guests consistently leave 5-star reviews — largely thanks to the perfect cleanliness on arrival.</span>
+        <span data-lang="es">Servicio impecable para mi propiedad de alquiler. La preparación entre check-in y check-out es rápida, profesional y sin sorpresas. Mis huéspedes dejan constantemente reseñas de 5 estrellas.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+        <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">J</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff">James T.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">
+            <span data-lang="ro" class="lang-active">Owner · Vivienda Vacacional · Tenerife Sud</span>
+            <span data-lang="en">Owner · Vacation Rental · Tenerife South</span>
+            <span data-lang="es">Propietario · Vivienda Vacacional · Tenerife Sur</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
+      <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
+        <span data-lang="ro" class="lang-active">VNKA CLEAN întrece așteptările la fiecare vizită. Echipa lor tratează spațiul nostru de birouri cu un profesionalism real — discreți, punctuali și atenți la detalii. De când lucrăm cu ei, nu a trebuit să ne gândim niciodată la curățenie.</span>
+        <span data-lang="en">VNKA CLEAN exceeds expectations on every visit. Their team treats our office space with real professionalism — discreet, punctual and detail-oriented. Since working with them, we have never had to think about cleaning.</span>
+        <span data-lang="es">VNKA CLEAN supera las expectativas en cada visita. Su equipo trata nuestro espacio de oficinas con un profesionalismo real — discretos, puntuales y atentos a los detalles. Desde que trabajamos con ellos, nunca hemos tenido que pensar en la limpieza.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+        <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">M</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff">María S.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">
+            <span data-lang="ro" class="lang-active">Manager · Birouri · Fañabe, Tenerife</span>
+            <span data-lang="en">Manager · Offices · Fañabe, Tenerife</span>
+            <span data-lang="es">Responsable · Oficinas · Fañabe, Tenerife</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-2" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
+      <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
+      <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
+        <span data-lang="ro" class="lang-active">Am angajat VNKA CLEAN pentru villa noastră din Torviscas și rezultatele au depășit orice așteptare. Atenția la detalii este excepțională — de la tratamentul mobilierului fin până la prezentarea fiecărei camere. O echipă în care poți avea încredere deplină.</span>
+        <span data-lang="en">I hired VNKA CLEAN for our villa in Torviscas and the results exceeded every expectation. The attention to detail is exceptional — from the treatment of fine furniture to the presentation of each room. A team you can fully trust.</span>
+        <span data-lang="es">Contraté a VNKA CLEAN para nuestra villa en Torviscas y los resultados superaron todas las expectativas. La atención al detalle es excepcional. Un equipo en el que puedes confiar plenamente.</span>
+      </p>
+      <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
+        <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">A</div>
+        <div>
+          <div style="font-size:14px;font-weight:700;color:#fff">Andrei M.</div>
+          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:2px">
+            <span data-lang="ro" class="lang-active">Proprietar · Vilă · Torviscas, Tenerife</span>
+            <span data-lang="en">Owner · Villa · Torviscas, Tenerife</span>
+            <span data-lang="es">Propietario · Villa · Torviscas, Tenerife</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact-section">
   <div class="reveal">
@@ -667,10 +765,22 @@ function setLang(lang) {
     el.classList.toggle('lang-active', el.dataset.lang === lang);
   });
   document.querySelectorAll('.lang-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+    const btnLang = btn.textContent.replace(/[^a-z]/gi,'').toLowerCase().slice(-2);
+    btn.classList.toggle('active', btnLang === lang);
   });
   document.documentElement.lang = lang;
+  // Update URL for shareable link
+  const url = new URL(window.location.href);
+  url.searchParams.set('lang', lang);
+  window.history.replaceState({}, '', url.toString());
 }
+
+// On load: read lang from URL
+(function(){
+  const params = new URLSearchParams(window.location.search);
+  const lang = params.get('lang');
+  if(lang && ['ro','en','es'].includes(lang)) setLang(lang);
+})();
 
 // Scroll reveal
 const revealObserver = new IntersectionObserver((entries) => {
