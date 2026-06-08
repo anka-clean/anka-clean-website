@@ -211,9 +211,9 @@ nav a:hover{color:var(--navy)}
 .hc-check{margin-left:auto;color:var(--teal);font-size:14px;font-weight:700}
 
 /* ── STATS BAR ── */
-.stats-bar{background:var(--navy);padding:40px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stats-bar{background:var(--navy);padding:40px 48px;display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 .stat-item{padding:0 40px;border-right:1px solid rgba(255,255,255,0.1);text-align:center}
-.stat-item:first-child{padding-left:0;text-align:left}
+.stat-item:first-child{padding-left:40px;text-align:center}
 .stat-item:last-child{border-right:none}
 .stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--teal);line-height:1}
 .stat-label{font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-top:6px}
@@ -307,6 +307,8 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
 /* ── MOBILE ── */
 @media(max-width:900px){
     .testi-grid{grid-template-columns:1fr !important}
+    .packages-grid{grid-template-columns:1fr !important}
+    .guest-ready-visual{grid-template-columns:1fr !important}
 
   header{padding:0 20px;height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
   nav{display:none}
@@ -319,8 +321,9 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
   .why-grid{grid-template-columns:1fr}
   .contact-grid{grid-template-columns:1fr;gap:48px}
   .form-row{grid-template-columns:1fr}
-  .stats-bar{grid-template-columns:1fr 1fr;gap:24px;padding:40px 20px}
-  .stat-item{padding:0;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:16px}
+  .stats-bar{grid-template-columns:1fr;gap:0;padding:40px 20px}
+  .stat-item{padding:20px 0;border-right:none;border-bottom:1px solid rgba(255,255,255,0.1);text-align:center}
+  .stat-item:first-child{padding-left:0;text-align:center}
   .stat-item:last-child{border-bottom:none;padding-bottom:0}
   footer{padding:32px 20px;flex-direction:column;text-align:center}
 }
@@ -360,9 +363,9 @@ span[data-lang].lang-active{display:inline}
       <button class="lang-btn" onclick="setLang('es')">ES</button>
     </div>
     <a href="#contact" class="nav-cta">
-      <span data-lang="ro">Solicită Ofertă</span>
-      <span data-lang="en">Get a Quote</span>
-      <span data-lang="es" class="lang-active">Presupuesto</span>
+      <span data-lang="ro">Pregătește Proprietatea</span>
+      <span data-lang="en">Get Guest-Ready Quote</span>
+      <span data-lang="es" class="lang-active">Presupuesto Guest-Ready</span>
     </a>
   </nav>
   <!-- Mobile lang switcher -->
@@ -378,9 +381,9 @@ span[data-lang].lang-active{display:inline}
   <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
     <img src="vnka-logo.jpg" alt="VNKA CLEAN" style="height:120px;width:auto;object-fit:contain;display:block">
     <div style="font-family:'Montserrat',sans-serif;font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);text-align:center">
-      <span data-lang="ro">Curățenie Profesională · Tenerife Sud</span>
-      <span data-lang="en">Professional Cleaning · Tenerife South</span>
-      <span data-lang="es" class="lang-active">Limpieza Profesional · Tenerife Sur</span>
+      <span data-lang="ro">Cleaning & Guest Experience · Tenerife Sud</span>
+      <span data-lang="en">Cleaning & Guest Experience · Tenerife South</span>
+      <span data-lang="es" class="lang-active">Cleaning & Guest Experience · Tenerife Sur</span>
     </div>
   </div>
 </div>
@@ -389,17 +392,17 @@ span[data-lang].lang-active{display:inline}
 <section class="hero" style="margin-top:0">
   <div class="hero-content">
 <h1 class="hero-title">
-      <span data-lang="ro">Curățenie Profesională<br><em>fără Compromisuri</em></span>
-      <span data-lang="en">Professional Cleaning<br><em>without Compromise</em></span>
-      <span data-lang="es" class="lang-active">Limpieza Profesional<br><em>sin Compromiso</em></span>
+      <span data-lang="ro">Proprietăți pregătite pentru oaspeți<br><em>în Tenerife Sud</em></span>
+      <span data-lang="en">Guest-ready properties<br><em>in Tenerife South</em></span>
+      <span data-lang="es" class="lang-active">Propiedades listas para huéspedes<br><em>en Tenerife Sur</em></span>
     </h1>
     <p class="hero-sub">
-      <span data-lang="ro">Servicii de curățenie de înaltă calitate pentru proprietăți rezidențiale, hoteliere și de birouri. Încredere, eficiență și atenție la fiecare detaliu.</span>
-      <span data-lang="en">High-quality cleaning services for residential, hotel and office properties. Trust, efficiency and attention to every detail.</span>
-      <span data-lang="es" class="lang-active">Servicios de limpieza de alta calidad para propiedades residenciales, hoteleras y de oficinas. Confianza, eficiencia y atención a cada detalle.</span>
+      <span data-lang="ro">Curățenie profesională, pregătire check-in, schimb lenjerie, setup amenities și raport foto pentru vile, apartamente și proprietăți de vacanță.</span>
+      <span data-lang="en">Professional cleaning, check-in preparation, fresh towels, amenities setup, and photo reports for villas, apartments, and holiday rentals.</span>
+      <span data-lang="es" class="lang-active">Limpieza profesional, preparación de check-in, toallas frescas, configuración de amenities e informes fotográficos para villas, apartamentos y alquileres vacacionales.</span>
     </p>
     <div style="display:inline-flex;align-items:center;gap:10px;margin-bottom:20px;background:#fff;border:1px solid rgba(42,157,143,0.25);border-radius:100px;padding:8px 18px;box-shadow:0 2px 12px rgba(42,157,143,0.1);">
-      <span style="color:#f59e0b;font-size:15px;letter-spacing:1px;">★★★★★</span>
+      <span style="color:#f59e0b;font-size:18px;letter-spacing:2px;line-height:1">★★★★★</span>
       <span style="font-size:12px;font-weight:700;color:#0f1f3d;letter-spacing:0.05em;">
         <span data-lang="ro">Evaluat 5/5 de clienții noștri</span>
         <span data-lang="en">Rated 5/5 by our clients</span>
@@ -408,9 +411,9 @@ span[data-lang].lang-active{display:inline}
     </div>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">
-        <span data-lang="ro">Solicită Ofertă →</span>
-        <span data-lang="en">Request a Quote →</span>
-        <span data-lang="es" class="lang-active">Pedir Presupuesto →</span>
+        <span data-lang="ro">Pregătește proprietatea →</span>
+        <span data-lang="en">Prepare my property for guests →</span>
+        <span data-lang="es" class="lang-active">Preparar mi propiedad →</span>
       </a>
       <a href="#servicii" class="btn-secondary">
         <span data-lang="ro">Vezi serviciile</span>
@@ -463,27 +466,27 @@ span[data-lang].lang-active{display:inline}
 <!-- STATS -->
 <div class="stats-bar">
   <div class="stat-item reveal">
-    <div class="stat-num">59</div>
+    <div class="stat-num" style="font-size:32px;letter-spacing:1px">💬</div>
     <div class="stat-label">
-      <span data-lang="ro">Proprietăți Servite</span>
-      <span data-lang="en">Properties Served</span>
-      <span data-lang="es" class="lang-active">Propiedades Atendidas</span>
+      <span data-lang="ro">Răspuns rapid WhatsApp</span>
+      <span data-lang="en">Fast WhatsApp response</span>
+      <span data-lang="es" class="lang-active">Respuesta rápida WhatsApp</span>
     </div>
   </div>
   <div class="stat-item reveal reveal-delay-1">
-    <div class="stat-num">98%</div>
+    <div class="stat-num" style="font-size:32px;letter-spacing:1px">📍</div>
     <div class="stat-label">
-      <span data-lang="ro">Clienți Mulțumiți</span>
-      <span data-lang="en">Satisfied Clients</span>
-      <span data-lang="es" class="lang-active">Clientes Satisfechos</span>
+      <span data-lang="ro">Tenerife Sud</span>
+      <span data-lang="en">Tenerife South</span>
+      <span data-lang="es" class="lang-active">Tenerife Sur</span>
     </div>
   </div>
   <div class="stat-item reveal reveal-delay-2">
-    <div class="stat-num">24h</div>
+    <div class="stat-num" style="font-size:32px;letter-spacing:1px">🏡</div>
     <div class="stat-label">
-      <span data-lang="ro">Disponibilitate</span>
-      <span data-lang="en">Availability</span>
-      <span data-lang="es" class="lang-active">Disponibilidad</span>
+      <span data-lang="ro">Curățenie + pregătire oaspeți</span>
+      <span data-lang="en">Cleaning + guest setup</span>
+      <span data-lang="es" class="lang-active">Limpieza + preparación huéspedes</span>
     </div>
   </div>
 </div>
@@ -504,25 +507,29 @@ span[data-lang].lang-active{display:inline}
   </div>
 
   <div class="services-grid">
-    <!-- Vivienda Vacacional -->
+    <!-- Vivienda Vacacional & Guest Experience -->
     <div class="service-card reveal">
       <div class="service-num">01</div>
       <span class="service-icon">🏨</span>
-      <div class="service-name">Vivienda Vacacional (Vv)</div>
+      <div class="service-name">Vivienda Vacacional &amp; Guest Experience</div>
       <div class="service-badge">
-        <span data-lang="ro">HOTELIER · CHECK-IN/OUT</span>
-        <span data-lang="en">HOTEL · CHECK-IN/OUT</span>
-        <span data-lang="es" class="lang-active">HOTELERO · CHECK-IN/OUT</span>
+        <span data-lang="ro">GUEST READY · CHECK-IN/OUT</span>
+        <span data-lang="en">GUEST READY · CHECK-IN/OUT</span>
+        <span data-lang="es" class="lang-active">GUEST READY · CHECK-IN/OUT</span>
       </div>
       <p class="service-desc">
-        <span data-lang="ro">Curățenie specializată pentru proprietăți în regim hotelier. Pregătire rapidă și impecabilă pentru fiecare oaspete, cu protocoale stricte de igienă și prezentare. <strong>Abonament lunar la cerere.</strong></span>
-        <span data-lang="en">Specialized cleaning for hotel-regime properties. Fast and impeccable preparation for every guest, with strict hygiene and presentation protocols. <strong>Monthly subscription available on request.</strong></span>
-        <span data-lang="es" class="lang-active">Limpieza especializada para propiedades en régimen hotelero. Preparación rápida e impecable para cada huésped, con estrictos protocolos de higiene y presentación. <strong>Suscripción mensual disponible bajo petición.</strong></span>
+        <span data-lang="ro">Pregătim proprietatea complet — nu doar curățăm. Oaspeții tăi găsesc totul aranjat, curat și pregătit din primul minut. <strong>Abonament lunar la cerere.</strong></span>
+        <span data-lang="en">We prepare the property completely — not just clean it. Your guests find everything arranged, clean and ready from the first minute. <strong>Monthly subscription available on request.</strong></span>
+        <span data-lang="es" class="lang-active">Preparamos la propiedad completamente, no solo la limpiamos. Sus huéspedes encontrarán todo arreglado, limpio y listo desde el primer minuto. <strong>Suscripción mensual disponible bajo petición.</strong></span>
       </p>
       <div class="service-features">
-        <div class="sf-item"><span data-lang="ro">Schimbare completă lenjerie</span><span data-lang="en">Complete linen change</span><span data-lang="es" class="lang-active">Cambio completo de ropa de cama</span></div>
-        <div class="sf-item"><span data-lang="ro">Dezinfecție toate suprafețele</span><span data-lang="en">Disinfection of all surfaces</span><span data-lang="es" class="lang-active">Desinfección de todas las superficies</span></div>
-        <div class="sf-item"><span data-lang="ro">Raport de stare proprietate</span><span data-lang="en">Property condition report</span><span data-lang="es" class="lang-active">Informe de estado de la propiedad</span></div>
+        <div class="sf-item"><span data-lang="ro">Curățenie între oaspeți</span><span data-lang="en">Cleaning between guests</span><span data-lang="es" class="lang-active">Limpieza entre huéspedes</span></div>
+        <div class="sf-item"><span data-lang="ro">Schimb lenjerie & prosoape</span><span data-lang="en">Bed linen &amp; towel setup</span><span data-lang="es" class="lang-active">Cambio de ropa de cama y toallas</span></div>
+        <div class="sf-item"><span data-lang="ro">Prosoape rulate stil hotelier</span><span data-lang="en">Rolled towels / hotel-style presentation</span><span data-lang="es" class="lang-active">Toallas enrolladas / presentación estilo hotel</span></div>
+        <div class="sf-item"><span data-lang="ro">Setup amenities baie</span><span data-lang="en">Bathroom amenities setup</span><span data-lang="es" class="lang-active">Configuración de amenities en baño</span></div>
+        <div class="sf-item"><span data-lang="ro">Setup bucătărie welcome</span><span data-lang="en">Kitchen welcome setup</span><span data-lang="es" class="lang-active">Bienvenida en cocina</span></div>
+        <div class="sf-item"><span data-lang="ro">Raport foto final pe WhatsApp</span><span data-lang="en">Final photo report by WhatsApp</span><span data-lang="es" class="lang-active">Informe fotográfico final por WhatsApp</span></div>
+        <div class="sf-item"><span data-lang="ro">Pregătire check-in ready</span><span data-lang="en">Check-in ready preparation</span><span data-lang="es" class="lang-active">Preparación check-in ready</span></div>
       </div>
       <div style="margin-top:16px;padding:14px 16px;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:6px;display:flex;flex-direction:column;gap:6px">
         <div style="font-size:12px;font-weight:700;color:var(--teal);display:flex;align-items:center;gap:6px">
@@ -664,6 +671,100 @@ span[data-lang].lang-active{display:inline}
     </div>
   </div>
   </div>
+</section>
+
+<!-- GUEST READY POSITIONING SECTION -->
+<section style="background:var(--white);padding:80px 48px">
+  <div class="reveal" style="max-width:800px;margin:0 auto;text-align:center">
+    <div class="section-label" style="justify-content:center">
+      <span data-lang="ro">Mai mult decât curățenie</span>
+      <span data-lang="en">More than cleaning</span>
+      <span data-lang="es" class="lang-active">Más que limpieza</span>
+    </div>
+    <h2 class="section-title">
+      <span data-lang="ro">Mai mult decât curățenie.<br><em>Pregătire completă pentru oaspeți.</em></span>
+      <span data-lang="en">More than cleaning.<br><em>Guest-ready presentation.</em></span>
+      <span data-lang="es" class="lang-active">Más que limpieza.<br><em>Presentación lista para huéspedes.</em></span>
+    </h2>
+    <p class="section-sub" style="margin:0 auto;text-align:center">
+      <span data-lang="ro">Pregătim proprietatea astfel încât oaspeții să simtă că e curată, îngrijită și gata din primul minut. Paturi, prosoape, băi, suprafețe bucătărie, amenities și detalii finale — verificate înainte de sosire.</span>
+      <span data-lang="en">We prepare the property so guests feel it is clean, cared for, and ready from the first minute. Beds, towels, bathrooms, kitchen surfaces, amenities, and final details are checked before arrival.</span>
+      <span data-lang="es" class="lang-active">Preparamos la propiedad para que los huéspedes sientan que está limpia, cuidada y lista desde el primer minuto. Camas, toallas, baños, superficies de cocina, amenities y detalles finales se verifican antes de la llegada.</span>
+    </p>
+  </div>
+
+  <!-- PACKAGES -->
+  <div class="reveal reveal-delay-1 packages-grid" style="max-width:960px;margin:64px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px">
+
+    <!-- Clean -->
+    <div style="border:1px solid var(--border);padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(15,31,61,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--teal)"></div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px">PACKAGE 01</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:16px">Clean</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:20px">
+        <span data-lang="ro">Curățenie de bază + suprafețe + podele.</span>
+        <span data-lang="en">Basic cleaning + surfaces + floors.</span>
+        <span data-lang="es" class="lang-active">Limpieza básica + superficies + suelos.</span>
+      </p>
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:12px;font-weight:700;letter-spacing:1px;text-decoration:none;border-bottom:1px solid var(--teal-border);padding-bottom:2px">
+        <span data-lang="ro">Cere ofertă →</span>
+        <span data-lang="en">Get quote →</span>
+        <span data-lang="es" class="lang-active">Pedir presupuesto →</span>
+      </a>
+    </div>
+
+    <!-- Turnover -->
+    <div style="border:2px solid var(--teal);padding:36px 28px;position:relative;background:var(--teal-dim);transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(42,157,143,0.15)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--teal);color:#fff;font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px">POPULAR</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px">PACKAGE 02</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:16px">Turnover</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:20px">
+        <span data-lang="ro">Curățenie + schimb lenjerie + prosoape + reset baie/bucătărie.</span>
+        <span data-lang="en">Cleaning + linen change + towels + bathroom/kitchen reset.</span>
+        <span data-lang="es" class="lang-active">Limpieza + cambio de ropa + toallas + reset baño/cocina.</span>
+      </p>
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-size:12px;font-weight:700;letter-spacing:1px;text-decoration:none;padding:10px 20px">
+        <span data-lang="ro">Cere ofertă →</span>
+        <span data-lang="en">Get quote →</span>
+        <span data-lang="es" class="lang-active">Pedir presupuesto →</span>
+      </a>
+    </div>
+
+    <!-- Guest Ready -->
+    <div style="border:1px solid var(--border);padding:36px 28px;position:relative;transition:transform .3s,box-shadow .3s" onmouseover="this.style.transform='translateY(-4px)';this.style.boxShadow='0 16px 48px rgba(15,31,61,0.1)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+      <div style="position:absolute;top:0;left:0;right:0;height:3px;background:var(--navy)"></div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:12px">PACKAGE 03</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:var(--navy);margin-bottom:16px">Guest Ready</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:20px">
+        <span data-lang="ro">Turnover + setup amenities + raport foto + verificare prezentare finală.</span>
+        <span data-lang="en">Turnover + amenities setup + photo report + final presentation check.</span>
+        <span data-lang="es" class="lang-active">Turnover + configuración amenities + informe fotográfico + verificación presentación final.</span>
+      </p>
+      <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;color:var(--teal);font-size:12px;font-weight:700;letter-spacing:1px;text-decoration:none;border-bottom:1px solid var(--teal-border);padding-bottom:2px">
+        <span data-lang="ro">Cere ofertă →</span>
+        <span data-lang="en">Get quote →</span>
+        <span data-lang="es" class="lang-active">Pedir presupuesto →</span>
+      </a>
+    </div>
+
+  </div>
+
+  <!-- GUEST READY VISUAL — desktop only -->
+  <div class="guest-ready-visual reveal reveal-delay-2" style="max-width:960px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
+    <div style="padding:8px 0">
+      <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px">GUEST READY INCLUDES</div>
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span><span><span data-lang="ro">Coș de bun venit pentru oaspeți</span><span data-lang="en">Welcome basket for guests</span><span data-lang="es" class="lang-active">Cesta de bienvenida para huéspedes</span></span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span><span><span data-lang="ro">Produse locale Tenerife (opțional)</span><span data-lang="en">Local Tenerife products (optional)</span><span data-lang="es" class="lang-active">Productos locales de Tenerife (opcional)</span></span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span><span><span data-lang="ro">Prezentare hotelieră completă</span><span data-lang="en">Full hotel-style presentation</span><span data-lang="es" class="lang-active">Presentación completa estilo hotel</span></span></div>
+        <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span><span><span data-lang="ro">Raport foto final trimis pe WhatsApp</span><span data-lang="en">Final photo report sent via WhatsApp</span><span data-lang="es" class="lang-active">Informe fotográfico final enviado por WhatsApp</span></span></div>
+      </div>
+    </div>
+    <div style="overflow:hidden;border-radius:4px;box-shadow:0 16px 48px rgba(15,31,61,0.12)">
+      <img src="welcome-basket.png" alt="Welcome basket — Guest Ready by VNKA CLEAN" style="width:100%;height:320px;object-fit:cover;object-position:center;display:block">
+    </div>
+  </div>
+
 </section>
 
 <!-- FULL WIDTH IMAGE BREAK -->
@@ -917,9 +1018,9 @@ span[data-lang].lang-active{display:inline}
       <span data-lang="es" class="lang-active">Contáctenos</span>
     </div>
     <h2 class="section-title">
-      <span data-lang="ro">Cere oferta ta<br><em>astăzi</em></span>
-      <span data-lang="en">Request your<br><em>quote today</em></span>
-      <span data-lang="es" class="lang-active">Solicita tu<br><em>presupuesto hoy</em></span>
+      <span data-lang="ro">Pregătește proprietatea<br><em>pentru oaspeți</em></span>
+      <span data-lang="en">Prepare your property<br><em>for guests</em></span>
+      <span data-lang="es" class="lang-active">Prepara tu propiedad<br><em>para los huéspedes</em></span>
     </h2>
   </div>
 
@@ -997,9 +1098,9 @@ span[data-lang].lang-active{display:inline}
         <textarea class="form-textarea" id="msgTextarea" placeholder="Describa sus necesidades: tipo de propiedad, superficie aproximada, frecuencia deseada, requisitos especiales..."></textarea>
       </div>
       <button type="submit" class="form-submit">
-        <span data-lang="ro">Trimite Cererea →</span>
-        <span data-lang="en">Send Request →</span>
-        <span data-lang="es" class="lang-active">Enviar Solicitud →</span>
+        <span data-lang="ro">Pregătește proprietatea mea →</span>
+        <span data-lang="en">Prepare my property for guests →</span>
+        <span data-lang="es" class="lang-active">Preparar mi propiedad →</span>
       </button>
     </form>
   </div>
