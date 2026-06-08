@@ -230,6 +230,9 @@ section{padding:100px 48px}
 .services{background:var(--off-white)}
 .services-header{max-width:640px;margin-bottom:64px}
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px}
+.service-img-break{grid-column:1/-1;overflow:hidden;line-height:0}
+.service-img-break img{width:100%;height:420px;object-fit:cover;display:block}
+@media(max-width:900px){.service-img-break img{height:240px}}
 .service-card{background:var(--white);padding:48px 40px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:default}
 .service-card::after{content:'';position:absolute;bottom:0;left:0;width:0;height:3px;background:var(--teal);transition:width .4s}
 .service-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(15,31,61,0.1)}
@@ -308,7 +311,9 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
 @media(max-width:900px){
     .testi-grid{grid-template-columns:1fr !important}
     .packages-grid{grid-template-columns:1fr !important}
-    .guest-ready-visual{grid-template-columns:1fr !important}
+    .guest-ready-visual{grid-template-columns:1fr !important;max-width:100% !important;margin-left:0 !important;margin-right:0 !important}
+    .basket-img-wrap{border-radius:0 !important;box-shadow:none !important;margin:0 -20px !important}
+    .basket-img-wrap img{height:260px !important}
 
   header{padding:0 20px;height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
   nav{display:none}
@@ -589,6 +594,11 @@ span[data-lang].lang-active{display:inline}
     </div>
   </div>
 
+  <!-- IMAGE: Case & Vile -->
+  <div class="service-img-break">
+    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/146e9c8f-07a3-4bec-9ad7-5ea3bacef2e9-md-SNliGpPm5HWdfy3d10Ieg41jbLYCkP.jpeg" alt="VNKA CLEAN — Villa privată Tenerife" style="width:100%;height:420px;object-fit:cover;object-position:center 30%;display:block">
+  </div>
+
     <!-- Apartamente -->
     <div class="service-card reveal reveal-delay-2">
       <div class="service-num">03</div>
@@ -628,6 +638,11 @@ span[data-lang].lang-active{display:inline}
         </div>
       </div>
     </div>
+  </div>
+
+  <!-- IMAGE: Apartamente -->
+  <div class="service-img-break">
+    <img src="vnka-kitchen.png" alt="VNKA CLEAN — Curățenie apartament Tenerife" style="width:100%;height:420px;object-fit:cover;object-position:center 40%;display:block">
   </div>
 
     <!-- Birouri -->
@@ -670,6 +685,12 @@ span[data-lang].lang-active{display:inline}
       </div>
     </div>
   </div>
+
+  <!-- IMAGE: Birouri -->
+  <div class="service-img-break">
+    <img src="vnka-office.png" alt="VNKA CLEAN — Curățenie birouri Tenerife" style="width:100%;height:420px;object-fit:cover;object-position:center 20%;display:block">
+  </div>
+
   </div>
 </section>
 
@@ -749,7 +770,7 @@ span[data-lang].lang-active{display:inline}
 
   </div>
 
-  <!-- GUEST READY VISUAL — desktop only -->
+  <!-- GUEST READY VISUAL -->
   <div class="guest-ready-visual reveal reveal-delay-2" style="max-width:960px;margin:40px auto 0;display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center">
     <div style="padding:8px 0">
       <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:16px">GUEST READY INCLUDES</div>
@@ -760,21 +781,12 @@ span[data-lang].lang-active{display:inline}
         <div style="display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--text)"><span style="color:var(--teal);font-weight:700;flex-shrink:0">→</span><span><span data-lang="ro">Raport foto final trimis pe WhatsApp</span><span data-lang="en">Final photo report sent via WhatsApp</span><span data-lang="es" class="lang-active">Informe fotográfico final enviado por WhatsApp</span></span></div>
       </div>
     </div>
-    <div style="overflow:hidden;border-radius:4px;box-shadow:0 16px 48px rgba(15,31,61,0.12)">
+    <div class="basket-img-wrap" style="overflow:hidden;border-radius:4px;box-shadow:0 16px 48px rgba(15,31,61,0.12)">
       <img src="welcome-basket.png" alt="Welcome basket — Guest Ready by VNKA CLEAN" style="width:100%;height:320px;object-fit:cover;object-position:center;display:block">
     </div>
   </div>
 
 </section>
-
-<!-- FULL WIDTH IMAGE BREAK -->
-<div style="width:100%;overflow:hidden;line-height:0;max-height:600px">
-  <img
-    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/146e9c8f-07a3-4bec-9ad7-5ea3bacef2e9-md-SNliGpPm5HWdfy3d10Ieg41jbLYCkP.jpeg"
-    alt="VNKA CLEAN — Profesionistă în dormitor de lux"
-    style="width:100%;height:600px;object-fit:cover;object-position:center 30%;display:block"
-  >
-</div>
 
 <!-- PREMIUM SERVICES -->
 <section class="premium-section">
