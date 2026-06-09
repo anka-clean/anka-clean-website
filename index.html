@@ -410,6 +410,8 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
     .guest-ready-visual{grid-template-columns:1fr !important;max-width:100% !important;margin-left:0 !important;margin-right:0 !important}
     .basket-img-wrap{border-radius:0 !important;box-shadow:none !important;margin:0 -20px !important}
     .basket-img-wrap img{height:260px !important}
+    .service-card[style*="grid-column"]{grid-template-columns:1fr !important}
+    .service-card[style*="grid-column"] > div:last-child{min-height:240px !important}
 
   header{padding:0 20px;height:auto;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
   nav{display:none}
@@ -609,7 +611,8 @@ span[data-lang].lang-active{display:inline}
 
   <div class="services-grid">
     <!-- Vivienda Vacacional & Guest Experience -->
-    <div class="service-card reveal">
+    <div class="service-card reveal" style="grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0;overflow:hidden">
+      <div style="padding:48px 40px">
       <div class="service-num">01</div>
       <span class="service-icon">🏨</span>
       <div class="service-name">Vivienda Vacacional &amp; Guest Experience</div>
@@ -645,6 +648,10 @@ span[data-lang].lang-active{display:inline}
           <span data-lang="en">From <strong>€18/hour</strong> general cleaning</span>
           <span data-lang="es" class="lang-active">Desde <strong>18 €/hora</strong> limpieza general</span>
         </div>
+      </div>
+      </div>
+      <div style="overflow:hidden;min-height:400px">
+        <img src="vnka-bedroom.jpg" alt="Guest-ready bedroom — VNKA CLEAN Tenerife" style="width:100%;height:100%;object-fit:cover;object-position:center 40%;display:block;min-height:400px">
       </div>
     </div>
   </div>
@@ -688,16 +695,6 @@ span[data-lang].lang-active{display:inline}
         </div>
       </div>
     </div>
-  </div>
-
-  <!-- IMAGE: Vivienda Vacacional — bedroom -->
-  <div class="service-img-break">
-    <img src="vnka-bedroom.jpg" alt="Guest-ready bedroom — VNKA CLEAN Tenerife" style="width:100%;height:420px;object-fit:cover;object-position:center 40%;display:block">
-  </div>
-
-  <!-- IMAGE: Case & Vile -->
-  <div class="service-img-break">
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/146e9c8f-07a3-4bec-9ad7-5ea3bacef2e9-md-SNliGpPm5HWdfy3d10Ieg41jbLYCkP.jpeg" alt="VNKA CLEAN — Villa privată Tenerife" style="width:100%;height:420px;object-fit:cover;object-position:center 30%;display:block">
   </div>
 
     <!-- Apartamente -->
