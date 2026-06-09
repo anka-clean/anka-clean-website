@@ -417,7 +417,8 @@ footer{background:var(--navy);padding:40px 48px;display:flex;align-items:center;
   nav{display:none}
   .mobile-lang{display:flex !important}
   .hero{grid-template-columns:1fr;padding:40px 20px 60px;gap:48px}
-  .hero-visual{display:none}
+  .hero-visual{display:block}
+  .hero-visual .hero-card{max-width:100%;margin:0 20px}
   section{padding:60px 20px}
   .services-grid{grid-template-columns:1fr}
   .premium-grid{grid-template-columns:1fr}
@@ -529,36 +530,68 @@ span[data-lang].lang-active{display:inline}
 
   <div class="hero-visual">
     <div class="hero-card">
-      <div class="hc-label">VNKA CLEAN — Servicii Incluse</div>
+      <div class="hc-label">
+        <span data-lang="ro">VNKA CLEAN — Servicii Incluse</span>
+        <span data-lang="en">VNKA CLEAN — Services Included</span>
+        <span data-lang="es" class="lang-active">VNKA CLEAN — Servicios Incluidos</span>
+      </div>
       <div class="hc-item">
         <div class="hc-icon">🏨</div>
         <div>
           <div class="hc-text">Vivienda Vacacional</div>
-          <div class="hc-sub">Check-in / Check-out rapid</div>
+          <div class="hc-sub">
+            <span data-lang="ro">Check-in / Check-out rapid</span>
+            <span data-lang="en">Fast check-in / check-out</span>
+            <span data-lang="es" class="lang-active">Check-in / Check-out rápido</span>
+          </div>
         </div>
         <div class="hc-check">✓</div>
       </div>
       <div class="hc-item">
         <div class="hc-icon">🏡</div>
         <div>
-          <div class="hc-text">Case & Vile Private</div>
-          <div class="hc-sub">Întreținere premium</div>
+          <div class="hc-text">
+            <span data-lang="ro">Case & Vile Private</span>
+            <span data-lang="en">Private Houses & Villas</span>
+            <span data-lang="es" class="lang-active">Casas y Villas Privadas</span>
+          </div>
+          <div class="hc-sub">
+            <span data-lang="ro">Întreținere premium</span>
+            <span data-lang="en">Premium maintenance</span>
+            <span data-lang="es" class="lang-active">Mantenimiento premium</span>
+          </div>
         </div>
         <div class="hc-check">✓</div>
       </div>
       <div class="hc-item">
         <div class="hc-icon">🏢</div>
         <div>
-          <div class="hc-text">Birouri & Spații Comerciale</div>
-          <div class="hc-sub">Programe flexibile</div>
+          <div class="hc-text">
+            <span data-lang="ro">Birouri & Spații Comerciale</span>
+            <span data-lang="en">Offices & Commercial Spaces</span>
+            <span data-lang="es" class="lang-active">Oficinas y Espacios Comerciales</span>
+          </div>
+          <div class="hc-sub">
+            <span data-lang="ro">Programe flexibile</span>
+            <span data-lang="en">Flexible schedules</span>
+            <span data-lang="es" class="lang-active">Horarios flexibles</span>
+          </div>
         </div>
         <div class="hc-check">✓</div>
       </div>
       <div class="hc-item">
         <div class="hc-icon">👕</div>
         <div>
-          <div class="hc-text">Laundry & Călcat Profesional</div>
-          <div class="hc-sub">Serviciu premium</div>
+          <div class="hc-text">
+            <span data-lang="ro">Laundry & Călcat Profesional</span>
+            <span data-lang="en">Professional Laundry & Ironing</span>
+            <span data-lang="es" class="lang-active">Lavandería & Planchado Profesional</span>
+          </div>
+          <div class="hc-sub">
+            <span data-lang="ro">Serviciu premium</span>
+            <span data-lang="en">Premium service</span>
+            <span data-lang="es" class="lang-active">Servicio premium</span>
+          </div>
         </div>
         <div class="hc-check">✓</div>
       </div>
