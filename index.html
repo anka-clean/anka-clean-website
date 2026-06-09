@@ -462,18 +462,18 @@ span[data-lang].lang-active{display:inline}
 .service-img-break {
   grid-column: 1 / -1 !important;
   width: 100% !important;
+  height: 520px !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
   left: auto !important;
   transform: none !important;
   margin: 0 !important;
 }
-.service-img-break img {
-  width: 100% !important;
-  max-width: none !important;
-  height: auto !important;
-  max-height: 600px !important;
-  object-fit: cover !important;
-  display: block !important;
-}
+.bedroom-bg { background-image: url('vnka-bedroom.jpg'); background-position: center 40%; }
+.villa-bg { background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/146e9c8f-07a3-4bec-9ad7-5ea3bacef2e9-md-SNliGpPm5HWdfy3d10Ieg41jbLYCkP.jpeg'); background-position: center 30%; }
+.kitchen-bg { background-image: url('vnka-kitchen.png'); background-position: center 40%; }
+.office-bg { background-image: url('vnka-office.png'); background-position: center 20%; }
 @media (max-width: 900px) {
   .services {
     padding-left: 20px !important;
@@ -483,7 +483,7 @@ span[data-lang].lang-active{display:inline}
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-  .service-img-break img {
+  .service-img-break {
     height: 260px !important;
   }
 }
@@ -776,9 +776,7 @@ span[data-lang].lang-active{display:inline}
     </div>
 
   <!-- IMAGE: Case & Vile -->
-  <div class="service-img-break">
-    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/146e9c8f-07a3-4bec-9ad7-5ea3bacef2e9-md-SNliGpPm5HWdfy3d10Ieg41jbLYCkP.jpeg" alt="VNKA CLEAN — Villa privată Tenerife" style="width:100%;height:auto;display:block">
-  </div>
+  <div class="service-img-break villa-bg"></div>
 
     <!-- Apartamente -->
     <div class="service-card reveal reveal-delay-2">
@@ -821,9 +819,7 @@ span[data-lang].lang-active{display:inline}
     </div>
 
   <!-- IMAGE: Apartamente -->
-  <div class="service-img-break">
-    <img src="vnka-kitchen.png" alt="VNKA CLEAN — Curățenie apartament Tenerife" style="width:100%;height:auto;display:block">
-  </div>
+  <div class="service-img-break kitchen-bg"></div>
 
     <!-- Birouri -->
     <div class="service-card reveal reveal-delay-3">
@@ -866,9 +862,7 @@ span[data-lang].lang-active{display:inline}
     </div>
 
   <!-- IMAGE: Birouri -->
-  <div class="service-img-break">
-    <img src="vnka-office.png" alt="VNKA CLEAN — Curățenie birouri Tenerife" style="width:100%;height:auto;display:block">
-  </div>
+  <div class="service-img-break office-bg"></div>
 
   </div>
 </section>
