@@ -953,16 +953,31 @@ span[data-lang].lang-active{display:inline}
         <div class="sf-item"><span data-lang="ro">Neutralizare mirosuri</span><span data-lang="en">Odour neutralisation</span><span data-lang="es" class="lang-active">Neutralización de olores</span></div>
         <div class="sf-item"><span data-lang="ro">Uscare rapidă</span><span data-lang="en">Fast drying</span><span data-lang="es" class="lang-active">Secado rápido</span></div>
       </div>
-      <div style="margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
-        <div style="border-radius:6px;overflow:hidden;background:#000">
-          <video controls playsinline preload="metadata" poster="vnka-mattress-cleaning-poster.jpg" style="width:100%;height:100%;display:block;object-fit:cover">
+      <div style="margin-top:24px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px">
+        <div style="text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--navy)">
+          <span data-lang="ro">ÎNAINTE</span>
+          <span data-lang="en">BEFORE</span>
+          <span data-lang="es" class="lang-active">ANTES</span>
+        </div>
+        <span style="font-size:18px;color:var(--teal);font-weight:700">→</span>
+        <div style="text-align:center;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal)">
+          <span data-lang="ro">DUPĂ</span>
+          <span data-lang="en">AFTER</span>
+          <span data-lang="es" class="lang-active">DESPUÉS</span>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:grid;grid-template-columns:1fr 1fr;gap:20px">
+        <div style="border-radius:6px;overflow:hidden;background:#000;position:relative">
+          <video id="vnka-vid-before" controls playsinline preload="metadata" poster="vnka-mattress-cleaning-poster.jpg" style="width:100%;height:100%;display:block;object-fit:cover">
             <source src="vnka-mattress-cleaning.mp4" type="video/mp4">
           </video>
+          <button type="button" aria-label="Fullscreen" onclick="var v=document.getElementById('vnka-vid-before');if(v.requestFullscreen){v.requestFullscreen();}else if(v.webkitRequestFullscreen){v.webkitRequestFullscreen();}else if(v.webkitEnterFullscreen){v.webkitEnterFullscreen();}" style="position:absolute;bottom:10px;right:10px;width:34px;height:34px;background:rgba(0,0,0,0.55);border:none;border-radius:4px;color:#fff;font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2">⛶</button>
         </div>
-        <div style="border-radius:6px;overflow:hidden;background:#000">
-          <video controls playsinline preload="metadata" poster="vnka-upholstery-cleaning-poster.jpg" style="width:100%;height:100%;display:block;object-fit:cover">
+        <div style="border-radius:6px;overflow:hidden;background:#000;position:relative">
+          <video id="vnka-vid-after" controls playsinline preload="metadata" poster="vnka-upholstery-cleaning-poster-after.jpg" style="width:100%;height:100%;display:block;object-fit:cover">
             <source src="vnka-upholstery-cleaning.mp4" type="video/mp4">
           </video>
+          <button type="button" aria-label="Fullscreen" onclick="var v=document.getElementById('vnka-vid-after');if(v.requestFullscreen){v.requestFullscreen();}else if(v.webkitRequestFullscreen){v.webkitRequestFullscreen();}else if(v.webkitEnterFullscreen){v.webkitEnterFullscreen();}" style="position:absolute;bottom:10px;right:10px;width:34px;height:34px;background:rgba(0,0,0,0.55);border:none;border-radius:4px;color:#fff;font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2">⛶</button>
         </div>
       </div>
       <div style="margin-top:16px;padding:14px 16px;background:var(--teal-dim);border:1px solid var(--teal-border);border-radius:6px;display:flex;flex-direction:column;gap:6px">
@@ -1217,8 +1232,8 @@ span[data-lang].lang-active{display:inline}
     <div class="reveal" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
       <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
       <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
-        <span data-lang="ro">Serviciu impecabil pentru proprietatea mea de închiriat. Pregătirea între check-in și check-out este rapidă, profesionistă și fără surprize. Oaspeții mei lasă constant recenzii de 5 stele, în mare parte datorită curățeniei perfecte la sosire.</span>
-        <span data-lang="en">Impeccable service for my rental property. The turnaround between check-in and check-out is fast, professional and stress-free. My guests consistently leave 5-star reviews, largely thanks to the perfect cleanliness on arrival.</span>
+        <span data-lang="ro">Serviciu impecabil pentru proprietatea mea de închiriat. Pregătirea între check-in și check-out este rapidă, profesionistă și fără surprize. Oaspeții mei lasă constant recenzii de 5 stele — în mare parte datorită curățeniei perfecte la sosire.</span>
+        <span data-lang="en">Impeccable service for my rental property. The turnaround between check-in and check-out is fast, professional and stress-free. My guests consistently leave 5-star reviews — largely thanks to the perfect cleanliness on arrival.</span>
         <span data-lang="es" class="lang-active">Servicio impecable para mi propiedad de alquiler. La preparación entre check-in y check-out es rápida, profesional y sin sorpresas. Mis huéspedes dejan constantemente reseñas de 5 estrellas.</span>
       </p>
       <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
@@ -1237,9 +1252,9 @@ span[data-lang].lang-active{display:inline}
     <div class="reveal reveal-delay-1" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
       <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
       <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
-        <span data-lang="ro">VNKA CLEAN întrece așteptările la fiecare vizită. Ea tratează spațiul nostru de birouri cu un profesionalism real, discretă, punctuală și atentă la detalii. De când lucrăm cu ea, nu a trebuit să ne gândim niciodată la curățenie.</span>
-        <span data-lang="en">VNKA CLEAN exceeds expectations on every visit. She treats our office space with real professionalism, discreet, punctual and detail-oriented. Since working with her, we have never had to think about cleaning.</span>
-        <span data-lang="es" class="lang-active">VNKA CLEAN supera las expectativas en cada visita. Ella trata nuestro espacio de oficinas con un profesionalismo real, discreta, puntual y atenta a los detalles. Desde que trabajamos con ella, nunca hemos tenido que pensar en la limpieza.</span>
+        <span data-lang="ro">VNKA CLEAN întrece așteptările la fiecare vizită. Ea tratează spațiul nostru de birouri cu un profesionalism real — discretă, punctuală și atentă la detalii. De când lucrăm cu ea, nu a trebuit să ne gândim niciodată la curățenie.</span>
+        <span data-lang="en">VNKA CLEAN exceeds expectations on every visit. She treats our office space with real professionalism — discreet, punctual and detail-oriented. Since working with her, we have never had to think about cleaning.</span>
+        <span data-lang="es" class="lang-active">VNKA CLEAN supera las expectativas en cada visita. Ella trata nuestro espacio de oficinas con un profesionalismo real — discreta, puntual y atenta a los detalles. Desde que trabajamos con ella, nunca hemos tenido que pensar en la limpieza.</span>
       </p>
       <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
         <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">M</div>
@@ -1257,8 +1272,8 @@ span[data-lang].lang-active{display:inline}
     <div class="reveal reveal-delay-2" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
       <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
       <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
-        <span data-lang="ro">Am angajat VNKA CLEAN pentru villa noastră din Torviscas și rezultatele au depășit orice așteptare. Atenția la detalii este excepțională, de la tratamentul mobilierului fin până la prezentarea fiecărei camere. Anka e cineva în care poți avea încredere deplină.</span>
-        <span data-lang="en">I hired VNKA CLEAN for our villa in Torviscas and the results exceeded every expectation. The attention to detail is exceptional, from the treatment of fine furniture to the presentation of each room. Anka is someone you can fully trust.</span>
+        <span data-lang="ro">Am angajat VNKA CLEAN pentru villa noastră din Torviscas și rezultatele au depășit orice așteptare. Atenția la detalii este excepțională — de la tratamentul mobilierului fin până la prezentarea fiecărei camere. Anka e cineva în care poți avea încredere deplină.</span>
+        <span data-lang="en">I hired VNKA CLEAN for our villa in Torviscas and the results exceeded every expectation. The attention to detail is exceptional — from the treatment of fine furniture to the presentation of each room. Anka is someone you can fully trust.</span>
         <span data-lang="es" class="lang-active">Contraté a VNKA CLEAN para nuestra villa en Torviscas y los resultados superaron todas las expectativas. La atención al detalle es excepcional. Anka es alguien en quien puedes confiar plenamente.</span>
       </p>
       <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
@@ -1277,9 +1292,9 @@ span[data-lang].lang-active{display:inline}
     <div class="reveal reveal-delay-3" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
       <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
       <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
-        <span data-lang="ro">Aveam emoții să las cheile casei unei persoane necunoscute, dar de la prima curățenie am simțit că vila mea e pe mâini bune. Anka observă lucruri la care nici eu nu mă gândeam, colțurile uitate, geamurile, mirosul casei. Acum nu mai verific nimic când mă întorc, pur și simplu știu că totul e perfect.</span>
-        <span data-lang="en">I was nervous about handing over the keys to my house to someone I didn't know, but after the very first clean I felt my villa was in good hands. Anka notices things I would never think of myself, forgotten corners, windows, the way the house smells. Now I don't check anything when I come back, I simply know everything will be perfect.</span>
-        <span data-lang="es" class="lang-active">Tenía cierta inquietud al entregar las llaves de mi casa a alguien que no conocía, pero desde la primera limpieza sentí que mi villa estaba en buenas manos. Anka se fija en detalles que ni yo misma pensaría, rincones olvidados, ventanas, el olor de la casa. Ahora ya no reviso nada al volver, simplemente sé que todo estará perfecto.</span>
+        <span data-lang="ro">Aveam emoții să las cheile casei unei persoane necunoscute, dar de la prima curățenie am simțit că vila mea e pe mâini bune. Anka observă lucruri la care nici eu nu mă gândeam — colțurile uitate, geamurile, mirosul casei. Acum nu mai verific nimic când mă întorc, pur și simplu știu că totul e perfect.</span>
+        <span data-lang="en">I was nervous about handing over the keys to my house to someone I didn't know, but after the very first clean I felt my villa was in good hands. Anka notices things I would never think of myself — forgotten corners, windows, the way the house smells. Now I don't check anything when I come back, I simply know everything will be perfect.</span>
+        <span data-lang="es" class="lang-active">Tenía cierta inquietud al entregar las llaves de mi casa a alguien que no conocía, pero desde la primera limpieza sentí que mi villa estaba en buenas manos. Anka se fija en detalles que ni yo misma pensaría — rincones olvidados, ventanas, el olor de la casa. Ahora ya no reviso nada al volver, simplemente sé que todo estará perfecto.</span>
       </p>
       <div style="display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,0.08);padding-top:20px">
         <div style="width:44px;height:44px;background:rgba(42,157,143,0.2);border:1px solid rgba(42,157,143,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:800;color:var(--teal);flex-shrink:0">D</div>
@@ -1297,7 +1312,7 @@ span[data-lang].lang-active{display:inline}
     <div class="reveal reveal-delay-3" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
       <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
       <p style="font-size:14px;color:rgba(255,255,255,0.75);line-height:1.85;margin-bottom:28px;font-style:italic">
-        <span data-lang="ro">De aproape 2 luni, apartamentul meu din Costa del Silencio e în grija VNKA CLEAN și nu am avut nicio surpriză neplăcută. Mesajele pe WhatsApp ajung mereu la timp, programările se respectă, și de fiecare dată găsesc apartamentul exact cum mi-aș dori să-l văd. Sunt recunoscătoare că am găsit pe cineva de încredere, nu mai trebuie să mă gândesc de două ori.</span>
+        <span data-lang="ro">De aproape 2 luni, apartamentul meu din Costa del Silencio e în grija VNKA CLEAN și nu am avut nicio surpriză neplăcută. Mesajele pe WhatsApp ajung mereu la timp, programările se respectă, și de fiecare dată găsesc apartamentul exact cum mi-aș dori să-l văd. Sunt recunoscătoare că am găsit pe cineva de încredere, în care nu mai trebuie să mă gândesc de două ori.</span>
         <span data-lang="en">For almost 2 months now, my apartment in Costa del Silencio has been in VNKA CLEAN's care and I haven't had a single unpleasant surprise. WhatsApp messages always arrive on time, appointments are respected, and every single time I find the apartment exactly how I'd want to see it. I'm grateful to have found someone trustworthy, someone I never have to think twice about.</span>
         <span data-lang="es" class="lang-active">Desde hace casi 2 meses, mi apartamento en Costa del Silencio está al cuidado de VNKA CLEAN y no he tenido ninguna sorpresa desagradable. Los mensajes de WhatsApp siempre llegan a tiempo, las citas se respetan, y cada vez encuentro el apartamento exactamente como me gustaría verlo. Estoy agradecida de haber encontrado a alguien de confianza, alguien en quien ya no tengo que pensar dos veces.</span>
       </p>
