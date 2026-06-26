@@ -1243,7 +1243,16 @@ span[data-lang].lang-active{display:inline}
     </h2>
   </div>
 
-  <div class="testi-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1100px;margin:0 auto">
+  <div style="position:relative">
+    <button onclick="document.querySelector('.testi-carousel').scrollBy({left:360,behavior:'smooth'})" style="position:absolute;right:12px;bottom:60px;z-index:10;width:52px;height:52px;border-radius:50%;background:var(--teal);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(42,157,143,0.5)">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+    <div class="testi-carousel" style="display:flex;overflow-x:auto;gap:20px;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:0 24px 16px 24px">
+    <style>
+      .testi-carousel::-webkit-scrollbar{display:none}
+      .testi-carousel>div{scroll-snap-align:start;flex-shrink:0;width:calc(100vw - 80px);max-width:400px;box-sizing:border-box;word-break:break-word;overflow-wrap:break-word}
+      @media(min-width:700px){.testi-carousel>div{width:380px}}
+    </style>
 
     <div class="reveal" style="border:1px solid rgba(255,255,255,0.08);border-top:3px solid var(--teal);padding:36px 32px;background:rgba(255,255,255,0.03)">
       <div style="font-size:28px;color:var(--teal);margin-bottom:20px">&#10077;</div>
@@ -1455,6 +1464,7 @@ span[data-lang].lang-active{display:inline}
       </div>
     </div>
 
+  </div>
   </div>
 
   <!-- ADD REVIEW -->
